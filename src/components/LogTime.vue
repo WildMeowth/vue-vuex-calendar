@@ -33,16 +33,20 @@ export default {
   },
   methods: {
     save() {
-      const plan = {
-        name: "Colin",
-        avatar: require('../assets/Colin.jpg'),
+      this.$http.get('user/getUser').then(function(data){
+        userName = data.name;
+        const plan = {
+        name: userName,
+        avatar: require('../assets/'+userName+'.jpg'),
         date: this.date,
         totalTime: parseInt(this.totalTime),
         comment: this.comment
-      };
-      this.$store.dispatch('savePlan', plan);
-      this.$store.dispatch('addTotalTime', parseInt(this.totalTime));
-      this.$router.go(-1);
+        };
+        this.$store.dispatch('savePlan', plan);
+        this.$store.dispatch('addTotalTime', parseInt(this.totalTime));
+        this.$router.go(-1);
+        })  
+
     }
   }
 }
