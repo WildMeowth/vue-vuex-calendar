@@ -33,8 +33,9 @@ export default {
   },
   methods: {
     save() {
-      this.$http.get('user/getUser').then(function(data){
-        userName = data.name;
+      this.$http.get('user/getUser.do').then(function(data){
+        console.log(data.data.data.name);
+        const userName = data.data.data.name;
         const plan = {
           name: userName,
           avatar: require('../assets/'+userName+'.jpg'),
