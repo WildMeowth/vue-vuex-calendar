@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import Util from '../util/util.js'
 export default {
   name: 'LogTime',
   data() {
@@ -33,12 +34,10 @@ export default {
   },
   methods: {
     save() {
-      this.$http.get('user/getUser.do').then(function(data){
-        console.log(data.data.data.name);
-        const userName = data.data.data.name;
+        const userName = Util.getCookie('name');
         const plan = {
           name: userName,
-          avatar: require('../assets/'+userName+'.jpg'),
+          avatar: require('../assets/colin.jpg'),
           date: this.date,
           totalTime: parseInt(this.totalTime),
           comment: this.comment
@@ -46,8 +45,6 @@ export default {
         this.$store.dispatch('savePlan', plan);
         this.$store.dispatch('addTotalTime', parseInt(this.totalTime));
         this.$router.go(-1);
-      })  
-
     }
   }
 }

@@ -1,34 +1,33 @@
 <template>
-  <div id="wrapper">
-    <nav class="navbar navbar-default">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <i class="glyphicon glyphicon-time"></i>
-          计划板
-        </a>
-        <ul class="nav navbar-nav">
-          <li><router-link to="/home">首页</router-link></li>
-          <li><router-link to="/time-entries">计划列表</router-link></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="col-sm-3">
-        <sidebar></sidebar>
-      </div>
-      <div class="col-sm-9">
-        <router-view></router-view>
-      </div>
-    </div>
+<div id="#app">
+
+  <keep-alive>
+  <compoment v-bind:is='currentview'></compoment>
+  </keep-alive>
   </div>
 </template>
 
 <script>
-  import Sidebar from './components/Sidebar.vue'
+  import Mai from './Main.vue'
+  import Login from './Login.vue'
+  import auth from './auth/auth'
 
-  export default {
-    components: { 'sidebar': Sidebar },
-  }
+   export default {
+        name: 'app',
+        
+        beforeCreate(){
+          //如果没有token的话需要重新登录
+          if(!auth.authenticated){
+             this.currentview = 'Login';
+          }else{
+            this.currentview = 'Mai';
+          }
+        },
+        components: {
+            Login,
+            Mai
+        }
+    }
 </script>
 
 

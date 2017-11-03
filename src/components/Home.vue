@@ -8,3 +8,23 @@
     </p>
   </div>
 </template>
+
+<script>
+import auth from '../auth/auth'
+
+export default {
+  name: 'home',
+  data() {
+    return {
+      date: '',
+      totalTime: 0,
+      comment: ''
+    }
+  },
+ 
+  methods:{
+      
+  }
+}
+</script>
+

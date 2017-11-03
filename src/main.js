@@ -7,9 +7,11 @@ import App from './App';
 import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/app.css';
+import auth from './auth/auth';
 Vue.config.productionTip = false;
 
 Vue.use(VueResource);
+auth.checkAuth();
 
 /* eslint-disable no-new */
 var app = new Vue({
