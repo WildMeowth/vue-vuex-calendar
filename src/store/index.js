@@ -11,7 +11,7 @@ const state = {
   list: [
     {
       name: userName,
-      avatar: require('../assets/colin.jpg'),
+      avatar: require('../assets/default.png'),
       date: '2017-10-12',
       totalTime: parseInt(6),
       comment: '10月12日晚上，看qqq直播6小时'

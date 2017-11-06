@@ -35,13 +35,25 @@ export default {
   methods: {
     save() {
         const userName = Util.getCookie('name');
-        const plan = {
-          name: userName,
-          avatar: require('../assets/colin.jpg'),
-          date: this.date,
-          totalTime: parseInt(this.totalTime),
-          comment: this.comment
-        };
+        var plan;
+        try{
+          console.log("--------------");
+            plan = {
+              name: userName,
+              avatar: require("../assets/"+userName+".jpg"),
+              date: this.date,
+              totalTime: parseInt(this.totalTime),
+              comment: this.comment
+            };
+        }catch(e){
+            plan = {
+              name: userName,
+              avatar: require("../assets/default.png"),
+              date: this.date,
+              totalTime: parseInt(this.totalTime),
+              comment: this.comment
+            };
+        }
         this.$store.dispatch('savePlan', plan);
         this.$store.dispatch('addTotalTime', parseInt(this.totalTime));
         this.$router.go(-1);
