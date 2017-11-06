@@ -2,6 +2,9 @@
 
 > This is a vue.js demo written by vuex ,vue ,vue-cli,vue-rooter
 
+
+Java web Service Project for this project: [github:vue-service](https://github.com/WildMeowth/vue-service)
+
 ## Commissioning
 ``` bash
 # install dependencies
@@ -31,6 +34,3 @@ npm run build
 >Log Time Page Preview
 
 ![alt text](/src/assets/preview-log.png "Log page preview")
-
-
-Java web Service Project for this project: [vue-service](https://github.com/WildMeowth/vue-service)
