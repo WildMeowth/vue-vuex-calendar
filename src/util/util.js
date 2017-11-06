@@ -13,7 +13,7 @@ export const getCookie= function (name) {
 
 //清除cookie
 export const delCookie= function (name) {
-    this.set(name, '', -1);
+    setCookie(name, "", -1);
 }
 
 export default {
