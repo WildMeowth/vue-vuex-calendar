@@ -33,4 +33,4 @@ npm run build
 ![alt text](/src/assets/preview-log.png "Log page preview")
 
 
-Java web Service Project for this project: [Web Service (Spring MVC)](https://github.com/WildMeowth/vue-service)
+Java web Service Project for this project: [vue-service](https://github.com/WildMeowth/vue-service)
