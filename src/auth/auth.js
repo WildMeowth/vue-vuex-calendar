@@ -7,13 +7,13 @@ export default{
     },
     login(context,info){
         context.$http.post(LOGIN_URL,info).then(function(data){
-            console.log(data);
-            console.log(data["body"]["data"]["token"]);
+            // console.log(data);
+            // console.log(data["body"]["data"]["token"]);
             Util.setCookie('token',data["body"]["data"]["token"],1);
             Util.setCookie('name',data["body"]["data"]["name"],1);
             // sessionStorage.setItem('token',data["body"]["data"]["token"]);
             // sessionStorage.setItem('name',data["body"]["data"]["name"]);
-            this.authenticated = true
+            this.authenticated = true;
             window.location.reload();
             
         },function(err){
