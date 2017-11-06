@@ -26,8 +26,8 @@ npm run build
 
 >Time Entries Page Preview
 
-![alt text](/src/assets/preview-time.jpg "Time entries page preview")
+![alt text](/src/assets/preview-time.png "Time entries page preview")
 
 >Log Time Page Preview
 
-![alt text](/src/assets/preview-log.jpg "Log page preview")
+![alt text](/src/assets/preview-log.png "Log page preview")
