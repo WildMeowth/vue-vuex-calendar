@@ -37,7 +37,6 @@ export default {
         const userName = Util.getCookie('name');
         var plan;
         try{
-          console.log("--------------");
             plan = {
               name: userName,
               avatar: require("../assets/"+userName+".jpg"),
