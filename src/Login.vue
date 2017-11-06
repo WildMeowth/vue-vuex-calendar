@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="content">
     <h2>登录</h2>
     <p>{{ error }}</p>
     <div>
