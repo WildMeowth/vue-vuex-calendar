@@ -8,8 +8,8 @@
 </template>
 
 <script>
-  import Mai from './Main.vue'
-  import Login from './Login.vue'
+  import Mai from './components/Main.vue'
+  import Login from './components/Login.vue'
   import auth from './auth/auth'
 
    export default {
