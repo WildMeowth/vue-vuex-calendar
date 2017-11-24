@@ -6,6 +6,8 @@ import VueResource from 'vue-resource';
 import App from './App';
 import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
+import $ from 'jquery';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import './css/app.css';
 import auth from './auth/auth';
 Vue.config.productionTip = false;
