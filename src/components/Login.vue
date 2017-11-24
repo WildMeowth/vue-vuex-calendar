@@ -1,25 +1,32 @@
 <template>
   <div id="content">
-    <div id="login">
+    <div id="login" class="container">
       <h2>登录</h2>
       <p>{{ error }}</p>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter your username"
-          v-model="info.username"
-        >
-      </div>
-      <div>
-        <input
-          type="password"
-          placeholder="Enter your password"
-          v-model="info.password"
-        >
-      </div>
-      <button @click="submit()">登录</button>
-      <!-- 触发模态框 -->
-      <a class="" data-toggle="modal" data-target="#myModal">注册</a>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="username" class="col-sm-2 control-label">账号：</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="username" placeholder="请输入账号" v-model="info.username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-2 control-label">密码：</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="请输入密码" v-model="info.password">
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">请记住我
+                <button type="submit" class="btn btn-default" @click="submit()">登录</button>
+                <!-- 触发模态框 -->
+                <a class="" data-toggle="modal" data-target="#myModal">注册</a>
+              </label>
+            </div>
+        </div>
+      </form>
       <!-- 模态框（Modal） -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -33,8 +40,20 @@
               </h4>
             </div>
             <div class="modal-body">
-              <div>账号：<input type="text" name="username"/></div>
-              <div>密码：<input type="password" name="pwd"/></div>
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="uN" class="col-sm-2 control-label">账号：</label>
+                <div class="col-sm-10">
+                  <input type="text" id="uN" class="form-control" name="username"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pWD" class="col-sm-2 control-label">密码：</label>
+                <div class="col-sm-10">
+                  <input type="password" id="pWD" class="form-control" name="pwd"/>
+                </div>
+              </div>       
+            </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">关闭
@@ -46,8 +65,6 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal -->
       </div>
-    </div>
-    <div id="regist">
     </div>
   </div>
 </template>
