@@ -1,5 +1,6 @@
 import Util from '../util/util.js'
 const LOGIN_URL = 'user/login.do';
+const REGISTER_URL = 'user/register.do';
 
 export default{
     data:{
@@ -15,6 +16,22 @@ export default{
             // sessionStorage.setItem('name',data["body"]["data"]["name"]);
             this.authenticated = true;
             window.location.reload();
+            
+        },function(err){
+            console.log(err+","+err.body.message)
+            context.error = err.body.message
+        })
+    },
+    register(context,info){
+        context.$http.post(REGISTER_URL,info).then(function(data){
+            //TODO
+            if(1){
+                var loginInfo = {
+                    username: info.username,
+                    password: info.password
+                }
+                login(context, loginInfo);
+            }
             
         },function(err){
             console.log(err+","+err.body.message)

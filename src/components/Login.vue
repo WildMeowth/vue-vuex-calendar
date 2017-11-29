@@ -42,23 +42,35 @@
             <div class="modal-body">
             <form class="form-horizontal" role="form">
               <div class="form-group">
-                <label for="uN" class="col-sm-2 control-label">账号：</label>
-                <div class="col-sm-10">
-                  <input type="text" id="uN" class="form-control" name="username"/>
+                <label for="uN" class="col-sm-3 control-label">ID：</label>
+                <div class="col-sm-9">
+                  <input type="text" id="uN" class="form-control" name="iD" v-model="register.id"/>
                 </div>
               </div>
               <div class="form-group">
-                <label for="pWD" class="col-sm-2 control-label">密码：</label>
-                <div class="col-sm-10">
-                  <input type="password" id="pWD" class="form-control" name="pwd"/>
+                <label for="uN" class="col-sm-3 control-label">用户名：</label>
+                <div class="col-sm-9">
+                  <input type="text" id="uN" class="form-control" name="username" v-model="register.username"/>
                 </div>
-              </div>       
+              </div>
+              <div class="form-group">
+                <label for="pWD" class="col-sm-3 control-label">密码：</label>
+                <div class="col-sm-9">
+                  <input type="password" id="pWD" class="form-control" name="pwd" v-model="register.password"/>
+                </div>
+              </div>    
+              <div class="form-group">
+                <label for="pWD2" class="col-sm-3 control-label">验证密码：</label>
+                <div class="col-sm-9">
+                  <input type="password" id="pWD2" class="form-control" name="pwd2" v-model="register.password2"/>
+                </div>
+              </div>    
             </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">关闭
               </button>
-              <button type="button" class="btn btn-primary" @click="regist()">
+              <button type="button" class="btn btn-primary" @click="register()">
                 注册
               </button>
             </div>
@@ -91,8 +103,14 @@ export default {
       }
       auth.login(this, info)
     },
-    regist() {
-      console.log("//TODO");
+    register() {
+      var registInfo = {
+        id: this.register.id,
+        username: this.register.username,
+        password: this.register.password,
+        token: ' '
+      }
+      auth.register(this, registInfo)
     }
   }
 }
